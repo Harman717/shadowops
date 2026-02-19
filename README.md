@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ShadowOps 🚨  
+### Engineering Risk Intelligence for GitHub CI
 
-## Getting Started
+ShadowOps transforms raw GitHub CI workflow telemetry into actionable engineering risk signals.  
 
-First, run the development server:
+Instead of manually scanning failed runs and logs, ShadowOps computes risk scores, detects instability patterns, visualizes degradation trends, and generates AI-powered incident analysis in real time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Built for **DevDash 2026 – The Sprint to Solution**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔍 Problem
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modern CI pipelines generate massive telemetry across workflow runs, test executions, and deployments.  
 
-## Learn More
+However:
 
-To learn more about Next.js, take a look at the following resources:
+- Failures are often isolated events with no contextual risk signal  
+- Engineering teams lack a unified short-term stability metric  
+- Degradation trends go unnoticed until delivery velocity is impacted  
+- There is no automated insight layer explaining why instability is occurring  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ShadowOps addresses this gap.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Solution
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ShadowOps integrates directly with GitHub repositories to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Aggregate workflow runs (last 7 days)
+- Compute a short-term Engineering Risk Score
+- Detect consecutive failure streaks
+- Identify top failing workflows
+- Visualize risk trends over time
+- Generate AI-powered structured incident reports
+- Provide immediate remediation snapshots
+
+It moves CI monitoring from reactive debugging to proactive risk intelligence.
+
+---
+
+## 🧠 Key Features
+
+### 📊 Risk Scoring Engine
+- Failure rate modeling
+- Consecutive failure streak detection
+- Weighted short-term risk formula
+- Risk classification (Low / Medium / High)
+
+### 🔎 Pattern Detection
+- Failure clustering by workflow
+- Most unstable workflow identification
+- Risk trend detection (Increasing / Decreasing / Stable)
+
+### 📈 Risk Over Time Visualization
+- 7-day aggregation
+- Failure distribution bars
+- Risk line trend
+
+### ⚡ AI Incident Analysis
+- Structured executive summary
+- Primary risk driver identification
+- Immediate action recommendation
+- Detailed analysis report
+
+### 🎛 Demo Mode
+- Controlled instability simulation
+- Realistic degradation modeling
+- Enables consistent demonstration
+
+---
+
+## 🏗 Architecture Overview
+
+<img width="955" height="195" alt="image" src="https://github.com/user-attachments/assets/fa93a901-1e88-4e45-b1e6-bc67fa0dede8" />
+
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **GitHub REST API**
+- **OpenAI API (GPT-4o-mini)**
+- **Recharts (Data Visualization)**
+- **TailwindCSS**
+- **Vercel Deployment**
+
+---
+
+## 🌐 Live Demo
+
+👉 https://shadowops-henna.vercel.app/
+
+---
+
+### 1️⃣ Clone Repository
+- git clone https://github.com/Harman717/shadowops.git
+- cd shadowops
+### 2️⃣ Install Dependencies
+- npm install
+### 3️⃣ Create Environment File
+- Create .env.local in root:
+- OPENAI_API_KEY=your_openai_api_key_here
+### 4️⃣ Run Development Server
+- npm run dev
+- Open: http://localhost:3000
+
+
+## 🔐 Environment Variables
+Required in production (Vercel):
+
+Variable	Description
+OPENAI_API_KEY	Used server-side for AI incident report generation
+Environment variables must be configured in Vercel under:
+
+Project → Settings → Environment Variables
+
+##🎥 Demo Flow
+- Launch Dashboard
+- Connect to GitHub repository (Owner + Repo + Personal Access Token)
+- View risk metrics and trend
+- Enable Demo Mode to simulate degradation
+- Click "Explain Current Risk"
+- Review AI-generated Action Snapshot and Full Incident Report
+
+##🔮 Future Scope
+- Multi-repository monitoring
+- Slack / Microsoft Teams alert integration
+- Dependency vulnerability correlation
+- Predictive degradation modeling (ML-based)
+- Cross-team risk heatmap dashboards
+- Historical analytics beyond 7 days
+
+## 🧑‍💻 Team
+- Solo Project
+- Built entirely during DevDash 2026 hackathon period.
+
+Contributions:
+-Architecture design
+- Backend API integration
+- Risk modeling logic
+- AI prompt engineering
+- Frontend development
+- Deployment configuration
+
+🤖 AI Disclosure
+This project uses OpenAI's GPT-4o-mini model to generate structured engineering incident reports based on CI telemetry metrics.
+AI is used for contextual analysis only. Risk scoring logic is deterministic and implemented independently.
+
+
