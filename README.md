@@ -97,15 +97,15 @@ It moves CI monitoring from reactive debugging to proactive risk intelligence.
 ---
 
 ### 1️⃣ Clone Repository
-git clone https://github.com/Harman717/shadowops.git
-cd shadowops
+- git clone https://github.com/Harman717/shadowops.git
+- cd shadowops
 ### 2️⃣ Install Dependencies
-npm install
+- npm install
 ### 3️⃣ Create Environment File
-Create .env.local in root:
-OPENAI_API_KEY=your_openai_api_key_here
+- Create .env.local in root:
+- OPENAI_API_KEY=your_openai_api_key_here
 ### 4️⃣ Run Development Server
-npm run dev
-Open:
-http://localhost:3000
+- npm run dev
+- Open:
+-- http://localhost:3000
 
