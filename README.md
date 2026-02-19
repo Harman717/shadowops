@@ -106,6 +106,48 @@ It moves CI monitoring from reactive debugging to proactive risk intelligence.
 - OPENAI_API_KEY=your_openai_api_key_here
 ### 4️⃣ Run Development Server
 - npm run dev
-- Open:
--- http://localhost:3000
+- Open: http://localhost:3000
+
+
+## 🔐 Environment Variables
+Required in production (Vercel):
+
+Variable	Description
+OPENAI_API_KEY	Used server-side for AI incident report generation
+Environment variables must be configured in Vercel under:
+
+Project → Settings → Environment Variables
+
+##🎥 Demo Flow
+- Launch Dashboard
+- Connect to GitHub repository (Owner + Repo + Personal Access Token)
+- View risk metrics and trend
+- Enable Demo Mode to simulate degradation
+- Click "Explain Current Risk"
+- Review AI-generated Action Snapshot and Full Incident Report
+
+##🔮 Future Scope
+- Multi-repository monitoring
+- Slack / Microsoft Teams alert integration
+- Dependency vulnerability correlation
+- Predictive degradation modeling (ML-based)
+- Cross-team risk heatmap dashboards
+- Historical analytics beyond 7 days
+
+## 🧑‍💻 Team
+- Solo Project
+- Built entirely during DevDash 2026 hackathon period.
+
+Contributions:
+-Architecture design
+- Backend API integration
+- Risk modeling logic
+- AI prompt engineering
+- Frontend development
+- Deployment configuration
+
+🤖 AI Disclosure
+This project uses OpenAI's GPT-4o-mini model to generate structured engineering incident reports based on CI telemetry metrics.
+AI is used for contextual analysis only. Risk scoring logic is deterministic and implemented independently.
+
 
