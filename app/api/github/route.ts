@@ -10,12 +10,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const commitsRes = await fetch(
-      `https://api.github.com/repos/${owner}/${repo}/commits?per_page=20`,
+      `https://api.github.com/repos/${owner}/${repo}/commits?per_page=100`,
       { headers }
     );
 
     const workflowsRes = await fetch(
-      `https://api.github.com/repos/${owner}/${repo}/actions/runs?per_page=20`,
+      `https://api.github.com/repos/${owner}/${repo}/actions/runs?per_page=100`,
       { headers }
     );
 

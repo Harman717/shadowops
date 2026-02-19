@@ -94,12 +94,12 @@ export default function Dashboard() {
       const risk = Math.round((d.failures / d.total) * 100);
 
       return {
-        date: date.toLocaleDateString(),
+        date: date.toISOString().split("T")[0],
         status: d.failures > 0 ? 1 : 0,
         risk,
         name: `workflow-${d.dayOffset}`,
         conclusion: d.failures > 0 ? "failure" : "success",
-        createdAt: date.toLocaleString(),
+        createdAt: date.toISOString(),
       };
     });
 
@@ -419,7 +419,7 @@ export default function Dashboard() {
                           </td>
                           <td className="p-4 text-gray-400"><code className="bg-slate-800 px-2 py-1 rounded">{run.head_branch}</code></td>
                           <td className="p-4 text-gray-400 text-sm">
-                            {new Date(run.created_at).toLocaleString()}
+                            {new Date(run.created_at).toISOString()}
                           </td>
                         </tr>
                       ))}

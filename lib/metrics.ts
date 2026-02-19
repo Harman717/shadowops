@@ -54,11 +54,11 @@ export function getConsecutiveFailureStreak(runs: WorkflowRun[]): number {
 
 export function prepareChartData(runs: WorkflowRun[]): ChartDataPoint[] {
   return runs.map((run) => ({
-    date: new Date(run.created_at).toLocaleDateString(),
+    date: new Date(run.created_at).toISOString().split("T")[0],
     status: run.conclusion === "failure" ? 1 : 0,
     name: run.name,
     conclusion: run.conclusion,
-    createdAt: new Date(run.created_at).toLocaleString(),
+    createdAt: new Date(run.created_at).toISOString(),
   }));
 }
 
