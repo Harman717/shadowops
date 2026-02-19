@@ -40,8 +40,10 @@ export default function Dashboard() {
     driver: "",
     action: "",
   });
+const [loading, setLoading] = useState(false);
 
   async function fetchData() {
+    setLoading(true);
     const res = await fetch("/api/github", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -50,6 +52,7 @@ export default function Dashboard() {
 
     const result = await res.json();
     setData(result);
+    setLoading(false);
   }
 
   // ✅ METRICS CALCULATIONS
@@ -245,9 +248,17 @@ export default function Dashboard() {
             />
             <button
               onClick={fetchData}
+              disabled={loading}
               className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-indigo-500/50 transition transform hover:scale-105"
             >
-              Connect
+              {loading ? (
+  <span className="flex items-center gap-2">
+    <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+    Connecting...
+  </span>
+) : (
+  "Connect"
+)}
             </button>
             <button
               onClick={() => setDemoMode(!demoMode)}
